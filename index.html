@@ -10,28 +10,35 @@
       padding: 2em;
       text-align: center;
     }
-    .link-box {
-      margin-top: 2em;
-      padding: 1em;
-      background-color: #f0f0f0;
-      border-radius: 8px;
+    a.link-box {
       display: inline-block;
-    }
-    a {
+      background-color: #f0f0f0;
+      padding: 1.5em;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #000;
       font-size: 1.1em;
-      word-break: break-all;
+      margin-top: 2em;
+      user-select: none; /* prevent text highlighting */
+    }
+
+    a.link-box:active {
+      background-color: #e0e0e0;
+    }
+
+    a.link-box span {
+      word-break: break-word;
+      color: #0077cc;
     }
   </style>
 </head>
 <body>
-  <h2>⚠️ Limited Support in Instagram</h2>
-  <p>For best performance, please open this game in your browser.</p>
-  <p><strong>Tap and hold the link below</strong> and choose <em>“Open in Chrome”</em> or <em>“Open in Safari”</em>:</p>
+  <h2>Open in Your Browser</h2>
+  <p>For full functionality, <strong>tap and hold the box below</strong> and choose “Open in Chrome” or “Open in Safari.”</p>
 
-  <div class="link-box">
-    <a href="https://subaquatic-legacy.github.io/bubblezzzz/" target="_blank">
-      https://subaquatic-legacy.github.io/bubblezzzz/
-    </a>
-  </div>
+  <!-- Entire box is now the link -->
+  <a href="https://subaquatic-legacy.github.io/bubblezzzz/" class="link-box" target="_blank">
+    <span>https://subaquatic-legacy.github.io/bubblezzzz/</span>
+  </a>
 </body>
 </html>
