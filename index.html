@@ -7,25 +7,96 @@
   <style>
     body {
       font-family: sans-serif;
-      padding: 2em;
+      padding: 35px;
       text-align: center;
+      color: white;
+      background-image: url('https://subaquatic-legacy.github.io/bubblezzzz/images/Game_BG_1.png');
+      background-size: auto;
+      background-position: center;
     }
+
+    h2 {
+      color: #aee800;
+      font-weight: bold;
+    }
+
+    p {
+      color: #aee800;
+      font-size: 18px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
     .fake-link {
-      font-size: 1.2em;
-      color: #0077cc;
+      font-size: 25px;
+      color: #00ffff;
       word-break: break-word;
-      user-select: text; /* allow text selection */
+      user-select: text;
+      margin-top: 60px;
+    }
+
+    .real-link a {
+      color: #00ffff;
+      font-size: 25px;
+      text-decoration: underline;
+      margin-top: 60px;
+      display: inline-block;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .icons {
+      margin-top: 30px;
+    }
+
+    .icons img {
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
-  <h2>⚠️ Better Experience Outside Instagram</h2>
-  <p>To get full functionality:</p>
-  <p><strong>Tap and hold</strong> the link below, then choose <em>“Open in Chrome”</em> or <em>“Open in Safari”</em>:</p>
 
-  <!-- Plain text version of the link -->
-  <div class="fake-link">
-    https://subaquatic-legacy.github.io/bubblezzzz/
+  <!-- Message for Instagram/Messenger browsers -->
+  <div id="inAppMessage" class="hidden">
+    <h2>For a better experience, open in your browser!</h2>
+    <p><strong>Tap and hold</strong> the link below until it's <strong>highlighted</strong>, then choose <em>"Open in browser"</em> from the pop-up menu.</p>
+    <div class="icons">
+      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 2em;">
+      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 3em;">
+      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 4em;">
+    </div>
+    <div class="fake-link">
+      https://subaquatic-legacy.github.io/bubblezzzz/
+    </div>
   </div>
+
+  <!-- Message for normal browsers -->
+  <div id="normalBrowserMessage" class="hidden">
+    <h2>You're all set!</h2>
+    <p>Click the link below to continue:</p>
+    <div class="icons">
+      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 2em;">
+      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 3em;">
+      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 4em;">
+    </div>
+    <div class="real-link">
+      <a href="https://subaquatic-legacy.github.io/bubblezzzz/" target="_blank">https://subaquatic-legacy.github.io/bubblezzzz/</a>
+    </div>
+  </div>
+
+  <script>
+    function isInAppBrowser() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /Instagram|FBAN|FBAV|Messenger/i.test(ua);
+    }
+
+    if (isInAppBrowser()) {
+      document.getElementById("inAppMessage").classList.remove("hidden");
+    } else {
+      document.getElementById("normalBrowserMessage").classList.remove("hidden");
+    }
+  </script>
 </body>
 </html>
