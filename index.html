@@ -10,7 +10,7 @@
       padding: 35px;
       text-align: center;
       color: white;
-      background-image: url('https://subaquatic-legacy.github.io/bubblezzzz/images/Game_BG_1.png');
+      background-image: url('https://subaquatic-legacy.github.io/bubblez/images/Game_BG_1.png');
       background-size: auto;
       background-position: center;
     }
@@ -60,43 +60,44 @@
 
   <!-- Message for Instagram/Messenger browsers -->
   <div id="inAppMessage" class="hidden">
-    <h2>For a better experience, open in your browser!</h2>
-    <p><strong>Tap and hold</strong> the link below until it's <strong>highlighted</strong>, then choose <em>"Open in browser"</em> from the pop-up menu.</p>
+    <h2>For a better experience open in your browser</h2>
+    <p><strong>Tap and hold</strong> the link below until it's <strong>highlighted</strong>, then choose <em>"Open in browser"</em> from the pop-up menu</p>
     <div class="icons">
-      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 2em;">
-      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 3em;">
-      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 4em;">
+      <img src="https://subaquatic-legacy.github.io/bubblez/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 2em;">
+      <img src="https://subaquatic-legacy.github.io/bubblez/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 3em;">
+      <img src="https://subaquatic-legacy.github.io/bubblez/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 4em;">
     </div>
     <div class="fake-link">
-      https://subaquatic-legacy.github.io/bubblezzzz/
+      https://subaquatic-legacy.github.io/bubblez/
     </div>
   </div>
 
   <!-- Message for normal browsers -->
   <div id="normalBrowserMessage" class="hidden">
     <h2>You're all set!</h2>
-    <p>Click the link below to continue:</p>
+    <p>Click the link below to start your journey:</p>
     <div class="icons">
-      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 2em;">
-      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 3em;">
-      <img src="https://subaquatic-legacy.github.io/bubblezzzz/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 4em;">
+      <img src="https://subaquatic-legacy.github.io/bubblez/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 2em;">
+      <img src="https://subaquatic-legacy.github.io/bubblez/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 3em;">
+      <img src="https://subaquatic-legacy.github.io/bubblez/images/Game_Lifes_Left_yellow.png" alt="icon" style="height: 4em;">
     </div>
     <div class="real-link">
-      <a href="https://subaquatic-legacy.github.io/bubblezzzz/" target="_blank">https://subaquatic-legacy.github.io/bubblezzzz/</a>
+      <a href="https://subaquatic-legacy.github.io/bubblez/" target="_blank">https://subaquatic-legacy.github.io/bubblez/</a>
     </div>
   </div>
 
   <script>
-    function isInAppBrowser() {
-      const ua = navigator.userAgent || navigator.vendor || window.opera;
-      return /Instagram|FBAN|FBAV|Messenger/i.test(ua);
-    }
+  function isInAppBrowser() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    return /Instagram|FBAN|FBAV|Messenger/i.test(ua);
+  }
 
-    if (isInAppBrowser()) {
-      document.getElementById("inAppMessage").classList.remove("hidden");
-    } else {
-      document.getElementById("normalBrowserMessage").classList.remove("hidden");
-    }
-  </script>
+  if (isInAppBrowser()) {
+    document.getElementById("inAppMessage").classList.remove("hidden");
+  } else {
+    // Redirect immediately to the game
+    window.location.href = "https://subaquatic-legacy.github.io/bubblez/";
+  }
+</script>
 </body>
 </html>
